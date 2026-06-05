@@ -85,10 +85,11 @@ public class BSTSet<E extends Comparable<E>> {
     }
 
     @Override
-
     public String toString() {
-
-        return "Tree: " + root.toString();
-
+        String treeStr = root.toString().trim();
+        if (treeStr.isEmpty()) {
+            return "Tree: []";
+        }
+        return "Tree: [" + treeStr.replace(" ", ", ") + "]";
     }
 }

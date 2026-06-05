@@ -35,4 +35,9 @@ public class BSTOuter<K extends Comparable<K>> extends BSTNode<K> {
     @Override
     public void inOrder(Consumer<K> action) {
     }
+
+    @Override
+    public boolean isEmpty() {
+        return true;
+    }
 }

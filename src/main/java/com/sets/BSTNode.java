@@ -34,13 +34,11 @@ public class BSTNode<K extends Comparable<K>> {
         } else if (cmp < 0) {
             rchild = rchild.remove(e);
         } else {
-            // Przypadek 1: Węzeł ma 0 lub 1 dziecko
-            if (lchild instanceof BSTOuter)
+            if (lchild.isEmpty())
                 return rchild;
-            if (rchild instanceof BSTOuter)
+            if (rchild.isEmpty())
                 return lchild;
 
-            // Przypadek 2: Węzeł ma dwoje dzieci (szukamy minimum w prawym poddrzewie)
             BSTNode<K> min = rchild.getMin();
             this.val = min.val;
             this.rchild = rchild.remove(min.val);
@@ -49,9 +47,7 @@ public class BSTNode<K extends Comparable<K>> {
     }
 
     public BSTNode<K> getMin() {
-        // TODO
-
-        if (lchild instanceof BSTOuter)
+        if (lchild.isEmpty())
             return this;
         return lchild.getMin();
     }
@@ -71,9 +67,16 @@ public class BSTNode<K extends Comparable<K>> {
         return lchild.contains(e);
     }
 
+    @Override
     public String toString() {
         String ret = lchild.toString();
-        ret += val.toString() + " | ";
+        ret += val.toString() + " ";
         return ret + rchild.toString();
+    }
+
+    // Metoda polimorficzna ułatwiająca implementacje
+    // innych metod.
+    public boolean isEmpty() {
+        return false;
     }
 }

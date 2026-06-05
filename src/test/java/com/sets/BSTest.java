@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 
-class BSTSetTest {
+class BSTest {
 
     private BSTSet<Integer> set1;
     private BSTSet<Integer> set2;
@@ -60,7 +60,6 @@ class BSTSetTest {
         assertEquals("Tree: [1, 2, 3, 4, 5, 6]", result.toString());
         assertEquals(6, result.size());
 
-        // Upewniamy się, że zbiory pierwotne pozostały nienaruszone
         assertEquals(4, set1.size(), "set1 nie powinien zostać zmodyfikowany");
         assertEquals("Tree: [1, 2, 3, 4]", set1.toString());
     }
