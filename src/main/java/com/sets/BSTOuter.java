@@ -7,7 +7,7 @@ public class BSTOuter<K extends Comparable<K>> extends BSTNode<K> {
     @SuppressWarnings("rawtypes")
     private static final BSTOuter INSTANCE = new BSTOuter();
 
-    public BSTOuter() {
+    private BSTOuter() {
         super();
     }
 

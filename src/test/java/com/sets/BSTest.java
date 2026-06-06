@@ -20,7 +20,7 @@ class BSTest {
     }
 
     @Test
-    void testAddAndSize() {
+    void test1() {
         BSTSet<Integer> set = new BSTSet<>();
         assertTrue(set.isEmpty());
         assertEquals(0, set.size());
@@ -36,14 +36,14 @@ class BSTest {
     }
 
     @Test
-    void testContains() {
+    void test2() {
         assertTrue(set1.contains(2));
         assertFalse(set1.contains(99));
         assertFalse(set1.contains(null));
     }
 
     @Test
-    void testRemoveElement() {
+    void test3() {
         set1.remove(2);
         assertFalse(set1.contains(2));
         assertEquals(3, set1.size());
@@ -54,7 +54,7 @@ class BSTest {
     }
 
     @Test
-    void testNonMutatingSum() {
+    void test4() {
         BSTSet<Integer> result = set1.sum(set2);
 
         assertEquals("Tree: [1, 2, 3, 4, 5, 6]", result.toString());
@@ -65,7 +65,7 @@ class BSTest {
     }
 
     @Test
-    void testNonMutatingDifference() {
+    void test5() {
         BSTSet<Integer> result = set1.difference(set2);
 
         assertEquals("Tree: [1, 2]", result.toString());
@@ -75,7 +75,7 @@ class BSTest {
     }
 
     @Test
-    void testNonMutatingIntersect() {
+    void test6() {
         BSTSet<Integer> result = set1.intersect(set2);
 
         assertEquals("Tree: [3, 4]", result.toString());
@@ -85,7 +85,7 @@ class BSTest {
     }
 
     @Test
-    void testMutatingAddSet() {
+    void test7() {
         set1.add(set2);
 
         assertEquals("Tree: [1, 2, 3, 4, 5, 6]", set1.toString());
@@ -93,7 +93,7 @@ class BSTest {
     }
 
     @Test
-    void testMutatingRemoveSet() {
+    void test8() {
         set1.remove(set2);
 
         assertEquals("Tree: [1, 2]", set1.toString());
@@ -101,7 +101,7 @@ class BSTest {
     }
 
     @Test
-    void testMutatingCut() {
+    void test9() {
         set1.cut(set2);
 
         assertEquals("Tree: [3, 4]", set1.toString());
