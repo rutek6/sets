@@ -14,7 +14,7 @@ public class BSTSet<E extends Comparable<E>> {
         this.root.inOrder(result::add);
         other.root.inOrder(result::add);
         return result;
-    } // suma
+    }
 
     public BSTSet<E> difference(BSTSet<E> other) {
         BSTSet<E> result = new BSTSet<>();
@@ -24,7 +24,7 @@ public class BSTSet<E extends Comparable<E>> {
             }
         });
         return result;
-    } // roznica
+    }
 
     public BSTSet<E> intersect(BSTSet<E> other) {
         BSTSet<E> result = new BSTSet<>();
@@ -34,12 +34,12 @@ public class BSTSet<E extends Comparable<E>> {
             }
         });
         return result;
-    } // przeciecie
+    }
 
     public BSTSet<E> add(BSTSet<E> other) {
         other.root.inOrder(this::add);
         return this;
-    } // suma
+    }
 
     public BSTSet<E> add(E e) {
         if (!contains(e)) {
@@ -68,7 +68,7 @@ public class BSTSet<E extends Comparable<E>> {
         this.size = 0;
         intersection.root.inOrder(this::add);
         return this;
-    } // iloczyn
+    }
 
     public boolean isEmpty() {
         return size == 0;
