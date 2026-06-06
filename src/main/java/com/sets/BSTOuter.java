@@ -4,8 +4,16 @@ import java.util.function.Consumer;
 
 public class BSTOuter<K extends Comparable<K>> extends BSTNode<K> {
 
+    @SuppressWarnings("rawtypes")
+    private static final BSTOuter INSTANCE = new BSTOuter();
+
     public BSTOuter() {
         super();
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <K extends Comparable<K>> BSTOuter<K> getInstance() {
+        return (BSTOuter<K>) INSTANCE;
     }
 
     @Override

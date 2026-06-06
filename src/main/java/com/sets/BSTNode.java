@@ -13,7 +13,7 @@ public class BSTNode<K extends Comparable<K>> {
 
     public BSTNode(K e) {
         val = e;
-        lchild = rchild = new BSTOuter<K>();
+        lchild = rchild = BSTOuter.getInstance();
     }
 
     public BSTNode<K> add(K e) {

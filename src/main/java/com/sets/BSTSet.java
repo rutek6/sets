@@ -5,7 +5,7 @@ public class BSTSet<E extends Comparable<E>> {
     int size;
 
     public BSTSet() {
-        root = new BSTOuter<E>();
+        root = BSTOuter.getInstance();
         size = 0;
     }
 
@@ -64,7 +64,7 @@ public class BSTSet<E extends Comparable<E>> {
 
     public BSTSet<E> cut(BSTSet<E> other) {
         BSTSet<E> intersection = this.intersect(other);
-        this.root = new BSTOuter<E>();
+        this.root = BSTOuter.getInstance();
         this.size = 0;
         intersection.root.inOrder(this::add);
         return this;
